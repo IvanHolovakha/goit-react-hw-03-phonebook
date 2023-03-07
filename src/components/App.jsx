@@ -11,6 +11,16 @@ export class App extends Component {
     filter: ''
   };
 
+  componentDidMount(){
+    this.setState({
+      contacts: JSON.parse(localStorage.getItem('contacts')),
+    })
+  }
+
+  componentDidUpdate(){
+    localStorage.setItem('contacts', JSON.stringify(this.state.contacts))
+  }
+
   onChangeFilter = (evt) => {
     return this.setState({filter: evt.target.value})
   };
