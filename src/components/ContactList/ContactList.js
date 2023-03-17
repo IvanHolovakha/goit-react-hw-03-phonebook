@@ -5,16 +5,19 @@ export const ContactList = ({state, onDeleteContact}) => {
     const normalizedFilter = state.filter.toLowerCase();
     const filteredContacts = state.contacts.filter(contact => contact.name.toLowerCase().includes(normalizedFilter));
 
-    return <ul>
-        {filteredContacts.map( ({id, name, number}) => 
-        <ContactItem 
-        key={id}
-        id={id} 
-        name={name} 
-        number={number}
-        onDeleteContact={onDeleteContact}
-        />)}
-    </ul>;
+    return (
+        <ul>
+            {filteredContacts.map(({ id, name, number }) =>
+                <ContactItem
+                    key={id}
+                    id={id}
+                    name={name}
+                    number={number}
+                    onDeleteContact={onDeleteContact}
+                />
+            )}
+        </ul>
+    );
 }
 
 ContactList.propTypes = {
