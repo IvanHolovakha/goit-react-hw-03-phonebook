@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 import { InputWrapper, Input } from './Filter.styled';
 
-export const Filter = ({value, onChangeFilter}) => {
+export const Filter = ({ value, onChangeFilter }) => {
   return (
     <InputWrapper>
       Find contacts by name
@@ -14,9 +14,9 @@ export const Filter = ({value, onChangeFilter}) => {
       />
     </InputWrapper>
   );
-}
+};
 
 Filter.propTypes = {
   value: PropTypes.string.isRequired,
   onChangeFilter: PropTypes.func.isRequired,
-}
+};
